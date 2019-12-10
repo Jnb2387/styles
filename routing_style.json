@@ -19,11 +19,11 @@
       "paint": {"background-color": "rgba(232, 218, 218, 1)"}
     },
     {
-      "id": "road_minor",
+      "id": "transportation",
       "type": "line",
       "source": "tilehut",
       "source-layer": "transportation",
-      "minzoom": 13,
+      "minzoom": 10,
       "filter": [
         "all",
         ["==", "$type", "LineString"],
@@ -35,7 +35,7 @@
         "visibility": "visible"
       },
       "paint": {
-        "line-color": "hsl(0, 0%, 97%)",
+        "line-color": "blue",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
       }
     },
