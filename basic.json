@@ -10,9 +10,11 @@
     "openmaptiles:mapbox:source:url": "mapbox://openmaptiles.4qljc88t"
   },
   "sources": {
-    "openmaptiles": {
+  "tilehut": {
       "type": "vector",
-      "url": "https://api.maptiler.com/tiles/v3/tiles.json?key={key}"
+      "tiles": ["http://px-geo02-d:3001/colorado/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 14
     }
   },
   "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key={key}",
