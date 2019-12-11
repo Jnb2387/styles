@@ -16,6 +16,7 @@
     {
       "id": "background",
       "type": "background",
+      "layout": {"visibility": "visible"},
       "paint": {"background-color": "rgba(249, 246, 246, 1)"}
     },
     {
@@ -222,7 +223,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "rgba(24, 1, 1, 1)",
+        "line-color": "rgba(106, 97, 97, 1)",
         "line-dasharray": [1, 1],
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
       }
@@ -238,9 +239,13 @@
         ["==", "$type", "LineString"],
         ["in", "class", "minor", "service"]
       ],
-      "layout": {"line-cap": "round", "line-join": "round"},
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
-        "line-color": "rgba(158, 126, 126, 1)",
+        "line-color": "rgba(201, 193, 193, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
       }
     },
@@ -254,7 +259,11 @@
         ["==", "$type", "LineString"],
         ["in", "class", "trunk", "primary"]
       ],
-      "layout": {"line-cap": "round", "line-join": "round"},
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "rgba(201, 193, 193, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 30]]}
@@ -272,7 +281,7 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": "rgba(211, 200, 200, 1)",
+        "line-color": "rgba(201, 193, 193, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 20]]}
       }
     },
@@ -320,6 +329,27 @@
       "paint": {
         "line-color": "hsl(34, 12%, 66%)",
         "line-opacity": {"base": 1, "stops": [[11, 0], [16, 1]]}
+      }
+    },
+    {
+      "id": "road_label",
+      "type": "symbol",
+      "source": "tilehut",
+      "source-layer": "transportation_name",
+      "layout": {
+        "symbol-placement": "line",
+        "text-field": "{name:latin} {name:nonlatin}",
+        "text-font": ["Noto Sans Regular"],
+        "text-letter-spacing": 0.1,
+        "text-rotation-alignment": "map",
+        "text-size": {"base": 1.4, "stops": [[10, 8], [20, 16]]},
+        "text-transform": "none",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)",
+        "text-halo-color": "hsl(0, 0%, 100%)",
+        "text-halo-width": 1.5
       }
     },
     {
