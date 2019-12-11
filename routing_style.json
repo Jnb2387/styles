@@ -16,17 +16,7 @@
     {
       "id": "background",
       "type": "background",
-      "paint": {
-        "background-color": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          11,
-          "hsl(35, 32%, 91%)",
-          13,
-          "hsl(35, 12%, 89%)"
-        ]
-      }
+      "paint": {"background-color": "rgba(249, 246, 246, 1)"}
     },
     {
       "id": "landuse-residential",
@@ -221,41 +211,6 @@
       }
     },
     {
-      "id": "road_area_pier",
-      "type": "fill",
-      "metadata": {},
-      "source": "tilehut",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "$type", "Polygon"], ["==", "class", "pier"]],
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-antialias": true}
-    },
-    {
-      "id": "road_pier",
-      "type": "line",
-      "source": "tilehut",
-      "source-layer": "transportation",
-      "filter": ["all", ["==", "$type", "LineString"], ["in", "class", "pier"]],
-      "layout": {"line-cap": "round", "line-join": "round"},
-      "paint": {
-        "line-color": "hsl(47, 26%, 88%)",
-        "line-width": {"base": 1.2, "stops": [[15, 1], [17, 4]]}
-      }
-    },
-    {
-      "id": "road_bridge_area",
-      "type": "fill",
-      "source": "tilehut",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "$type", "Polygon"],
-        ["in", "brunnel", "bridge"]
-      ],
-      "layout": {},
-      "paint": {"fill-color": "hsl(47, 26%, 88%)", "fill-opacity": 0.5}
-    },
-    {
       "id": "road_path",
       "type": "line",
       "source": "tilehut",
@@ -267,7 +222,7 @@
       ],
       "layout": {"line-cap": "square", "line-join": "bevel"},
       "paint": {
-        "line-color": "hsl(0, 0%, 97%)",
+        "line-color": "rgba(24, 1, 1, 1)",
         "line-dasharray": [1, 1],
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 10]]}
       }
@@ -285,31 +240,8 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": "hsl(0, 0%, 97%)",
+        "line-color": "rgba(158, 126, 126, 1)",
         "line-width": {"base": 1.55, "stops": [[4, 0.25], [20, 30]]}
-      }
-    },
-    {
-      "id": "aeroway-runway",
-      "type": "line",
-      "metadata": {"mapbox:group": "1444849345966.4436"},
-      "source": "tilehut",
-      "source-layer": "aeroway",
-      "minzoom": 4,
-      "filter": [
-        "all",
-        ["in", "class", "runway"],
-        ["==", "$type", "LineString"]
-      ],
-      "layout": {
-        "line-cap": "round",
-        "line-join": "round",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "rgba(255, 255, 255, 1)",
-        "line-opacity": 1,
-        "line-width": {"base": 1.5, "stops": [[11, 4], [17, 50]]}
       }
     },
     {
@@ -324,7 +256,7 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": "#fff",
+        "line-color": "rgba(201, 193, 193, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 30]]}
       }
     },
@@ -340,7 +272,7 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": "#fff",
+        "line-color": "rgba(211, 200, 200, 1)",
         "line-width": {"base": 1.4, "stops": [[6, 0.5], [20, 20]]}
       }
     },
@@ -357,49 +289,9 @@
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
-        "line-color": [
-          "step",
-          ["zoom"],
-          [
-            "match",
-            ["get", "class"],
-            "motorway",
-            "hsl(26, 87%, 62%)",
-            "trunk",
-            "hsl(0, 0%, 100%)",
-            "hsl(0, 0%, 100%)"
-          ],
-          6,
-          [
-            "match",
-            ["get", "class"],
-            "motorway",
-            "hsl(26, 87%, 62%)",
-            "trunk",
-            "hsl(46, 80%, 60%)",
-            "hsl(46, 80%, 60%)"
-          ],
-          9,
-          [
-            "match",
-            ["get", "class"],
-            "motorway",
-            "hsl(26, 100%, 68%)",
-            "trunk",
-            "hsl(46, 85%, 67%)",
-            "hsl(46, 85%, 67%)"
-          ]
-        ],
+        "line-color": "rgba(205, 69, 69, 1)",
         "line-offset": 0,
-        "line-width": [
-          "interpolate",
-          ["exponential", 1.5],
-          ["zoom"],
-          5,
-          0.75,
-          18,
-          32
-        ]
+        "line-width": {"base": 1.55, "stops": [[4, 2.25], [20, 30]]}
       }
     },
     {
